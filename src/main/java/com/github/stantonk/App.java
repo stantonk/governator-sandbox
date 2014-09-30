@@ -37,8 +37,10 @@ public class App {
                 .build()
                 .createInjector();
 
+        // NB LifecycleManager is not necessary for @Configuration functionality
         LifecycleManager manager = injector.getInstance(LifecycleManager.class);
         manager.start();
+
         App instance = injector.getInstance(App.class);
         System.out.println(instance.config);
         System.out.println(instance.otherConfig);
